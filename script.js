@@ -1,140 +1,151 @@
 // preloader
 
-// document.body.style.overflow = 'hidden';
-// const loader = () => {
-//     document.body.style.overflow = '';
-//     const preloader = document.getElementById('preloader');
-//     const fadeout = setInterval(() => {
-//         const opacity = getComputedStyle(preloader).opacity;
-//         opacity > 0 ? preloader.style.opacity = opacity - 0.1000 : (clearInterval(fadeout), preloader.remove());
-//     }, 15);
-// }
+document.body.style.overflow = 'hidden';
+const loader = () => {
+  document.body.style.overflow = '';
+  const preloader = document.getElementById('preloader');
+  const fadeout = setInterval(() => {
+    const opacity = getComputedStyle(preloader).opacity;
+    opacity > 0
+      ? (preloader.style.opacity = opacity - 0.1)
+      : (clearInterval(fadeout), preloader.remove());
+  }, 15);
+};
 
-
-// setTimeout(() => loader(), 2000);
+setTimeout(() => loader(), 2000);
 
 if (window.scrollY > 0) {
-    window.scrollTo(0, 0); // Сбросить прокрутку в начало при загрузке
+  window.scrollTo(0, 0); // Сбросить прокрутку в начало при загрузке
+}
+
+const classesToExclude = [];
+
+function getCurrentScale() {
+  const body = document.body;
+  const transform = window.getComputedStyle(body).transform;
+  if (transform && transform !== 'none') {
+    const matrix = transform.match(/matrix\(([^)]+)\)/);
+    if (matrix) {
+      const values = matrix[1].split(',');
+      return parseFloat(values[0]) || 1;
+    }
   }
+  return 1;
+}
 
+// Переменная для отслеживания текущего масштаба
+let currentScale = getCurrentScale();
 
-  const classesToExclude = [
-  ];
+// Инициализация Lenis с обновленными настройками
+const lenis = new Lenis({
+  duration: 2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  orientation: 'vertical',
+  smoothWheel: true,
+  wheelMultiplier: 1,
+  touchMultiplier: 1.5,
+  infinite: false,
+  autoRaf: true,
+  autoResize: true,
+  syncTouch: false,
 
-  function getCurrentScale() {
-      const body = document.body;
-      const transform = window.getComputedStyle(body).transform;
-      if (transform && transform !== 'none') {
-          const matrix = transform.match(/matrix\(([^)]+)\)/);
-          if (matrix) {
-              const values = matrix[1].split(',');
-              return parseFloat(values[0]) || 1;
-          }
-      }
-      return 1;
-  }
+  // Функция предотвращения скролла для определенных элементов
+  prevent: (node) => {
+    return classesToExclude.some(
+      (className) => node.classList.contains(className) || node.closest(`.${className}`),
+    );
+  },
 
-  // Переменная для отслеживания текущего масштаба
-  let currentScale = getCurrentScale();
+  // Виртуальный скролл для обработки автоскейла
+  virtualScroll: (e) => {
+    const newScale = getCurrentScale();
 
-  // Инициализация Lenis с обновленными настройками
-  const lenis = new Lenis({
-      duration: 2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.5,
-      infinite: false,
-      autoRaf: true,
-      autoResize: true,
-      syncTouch: false,
+    if (newScale !== currentScale) {
+      currentScale = newScale;
+    }
 
-      // Функция предотвращения скролла для определенных элементов
-      prevent: (node) => {
-          return classesToExclude.some(className =>
-              node.classList.contains(className) ||
-              node.closest(`.${className}`)
-          );
-      },
+    if (currentScale !== 1) {
+      e.deltaY = e.deltaY / currentScale;
+      e.deltaX = e.deltaX / currentScale;
+    }
 
-      // Виртуальный скролл для обработки автоскейла
-      virtualScroll: (e) => {
-          const newScale = getCurrentScale();
+    return true;
+  },
+});
 
-          if (newScale !== currentScale) {
-              currentScale = newScale;
-          }
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    currentScale = getCurrentScale();
+    lenis.resize(); // Обновляем размеры Lenis
+  }, 100);
+});
 
-          if (currentScale !== 1) {
-              e.deltaY = e.deltaY / currentScale;
-              e.deltaX = e.deltaX / currentScale;
-          }
-
-          return true;
-      }
+window.addEventListener('load', () => {
+  classesToExclude.forEach((className) => {
+    document.querySelectorAll(`.${className}`).forEach((element) => {
+      element.setAttribute('data-lenis-prevent', '');
+    });
   });
+});
 
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-          currentScale = getCurrentScale();
-          lenis.resize(); // Обновляем размеры Lenis
-      }, 100);
-  });
+lenis.on('scroll', (e) => {
+  // console.log('Scroll event:', e);
+});
 
+// popup
 
-  window.addEventListener('load', () => {
-      classesToExclude.forEach((className) => {
-          document.querySelectorAll(`.${className}`).forEach((element) => {
-              element.setAttribute('data-lenis-prevent', '');
-          });
-      });
-  });
+// new-items slider
+const newItemsSlider = new Swiper('#new-items-slider', {
+  direction: 'horizontal',
+  //   centeredSlides: true,
+  initialSlide: 0,
+  // loop: true,
+  navigation: {
+    nextEl: '.new-items-button-next',
+    prevEl: '.new-items-button-prev',
+  },
 
+  slidesPerView: 3.4,
+  spaceBetween: 15,
+  speed: 500,
 
-  lenis.on('scroll', (e) => {
-      // console.log('Scroll event:', e);
-  });
+  //   breakpoints: {
+  //     1000: {
+  //       slidesPerView: 1.7,
+  //       spaceBetween: 14,
+  //     },
+  //   },
 
+  simulateTouch: true,
+  allowTouchMove: true,
+});
 
+const insightsSlider = new Swiper('#insights-slider', {
+  direction: 'horizontal',
+  //   centeredSlides: true,
+  initialSlide: 0,
+  // loop: true,
+  navigation: {
+    nextEl: '.insights-button-next',
+    prevEl: '.insights-button-prev',
+  },
 
+  slidesPerView: 3.4,
+  spaceBetween: 15,
+  speed: 500,
 
- // popup
+  //   breakpoints: {
+  //     1000: {
+  //       slidesPerView: 1.7,
+  //       spaceBetween: 14,
+  //     },
+  //   },
 
-
-
-// showreel slider
-const showreelSlider = new Swiper('#showreel-slider', {
-    direction: 'horizontal',
-    centeredSlides: true,
-    initialSlide: 1,
-    // loop: true,
-    navigation: {
-      nextEl: '.showreel-button-next',
-      prevEl: '.showreel-button-prev',
-    },
-
-    slidesPerView: 1.2,
-    spaceBetween: 6,
-    speed: 500,
-
-    breakpoints: {
-
-        1000: {
-          slidesPerView: 1.7,
-          spaceBetween: 14
-        },
-    },
-
-
-
-    simulateTouch: true,
-    allowTouchMove: true,
-  });
-
-
+  simulateTouch: true,
+  allowTouchMove: true,
+});
 
 // burger-menu
 
@@ -161,44 +172,31 @@ const showreelSlider = new Swiper('#showreel-slider', {
 //     });
 // });
 
-
-
-
-
-
-
 //Fade-in
 
-gsap.utils.toArray(".fade-in").forEach((element) => {
-    gsap.from(element, {
-        opacity: 0,
-        y: 40,
-        duration: 1,
-        scrollTrigger: {
-        trigger: element,
-        start: "top 90%",
-        toggleActions: "play none none none",
-        },
-    });
+gsap.utils.toArray('.fade-in').forEach((element) => {
+  gsap.from(element, {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    scrollTrigger: {
+      trigger: element,
+      start: 'top 90%',
+      toggleActions: 'play none none none',
+    },
+  });
 });
 
-
-
-
-
 window.addEventListener('load', () => {
-    ScrollTrigger.refresh();
-  });
-
-
-
+  ScrollTrigger.refresh();
+});
 
 //costumers gallery
 const blocks = document.querySelectorAll('.costumers__block');
 
-blocks.forEach(block => {
+blocks.forEach((block) => {
   block.addEventListener('mouseenter', () => {
-    blocks.forEach(b => b.classList.remove('active'));
+    blocks.forEach((b) => b.classList.remove('active'));
     block.classList.add('active');
   });
 });

@@ -1,0 +1,75 @@
+@use '../abstract/index' as *;
+
+.advantages {
+  color: $color-white;
+  padding: 0 20px;
+}
+
+.advantages__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0;
+  @include font($size: 3.5rem, $height: 4.4rem, $weight: 400);
+  letter-spacing: -1px;
+}
+
+.advantages__title {
+  :last-child {
+    color: #8b8f94;
+  }
+}
+
+.advantages__content {
+  padding-left: 20px;
+  margin-bottom: 40px;
+
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  column-gap: 25px;
+  row-gap: 150px;
+  justify-content: space-between;
+}
+
+.advantages__card {
+  display: flex;
+  gap: 20px;
+}
+
+.advantages__image {
+  width: 85px;
+  min-width: 85px;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #0840f4;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.advantages__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 210px;
+  letter-spacing: -1px;
+  @include font($size: 2rem, $height: 2.5rem, $weight: 500);
+  color: $color-white;
+
+  & :last-child {
+    @include font($size: 1.4rem, $height: 1.9rem, $weight: 400);
+    color: #858585;
+  }
+}
+
+.advantages__card:nth-child(1) .advantages__info :last-child,
+.advantages__card:nth-child(2) .advantages__info :last-child {
+  max-width: 210px;
+}
+
+.advantages__card:nth-child(n + 3) .advantages__info :last-child {
+  max-width: 185px;
+}

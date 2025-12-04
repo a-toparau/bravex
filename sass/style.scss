@@ -9,12 +9,18 @@
 @use 'base/base';
 @use 'base/buttons';
 @use 'base/icons';
+@use 'base/loader';
 
 // layouts
 @use 'layouts/header';
 @use 'layouts/columns';
+@use 'layouts/footer';
 
 //explore
 @use 'components/explore';
 @use 'components/popular-categories';
 @use 'components/catalog-overview';
+@use 'components/new-items';
+@use 'components/advantages';
+@use 'components/new-collection';
+@use 'components/insights';
