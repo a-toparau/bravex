@@ -2,8 +2,8 @@
 
 .new-collection {
   width: 100%;
-  // height: 100%;
   height: 1000px;
+  max-height: 100vh;
   position: relative;
   overflow: hidden;
   color: $color-white;
@@ -20,11 +20,7 @@
 }
 
 .new-collection__background {
-  // position: relative;
-  // height: 105%;
-  // bottom: 0;
-  // object-fit: cover;
-  height: 1000px;
+  height: 100%;
   width: 106%;
   object-fit: cover;
   position: absolute;
@@ -44,16 +40,33 @@
   justify-content: space-between;
   gap: 36px;
   padding: 50px;
+  @include media-laptop-lg {
+    gap: 30px;
+    padding: 40px;
+  }
+  @include media-tablet {
+    gap: 25px;
+    padding: 20px;
+  }
+  @include media-tablet-sm {
+    justify-content: flex-end;
+  }
 }
 
 .new-collection__header {
   display: flex;
   justify-content: space-between;
+  @include media-tablet-sm {
+    display: none;
+  }
 }
 
 .new-collection__label {
   @include font($size: 2.5rem, $height: 2.5rem, $weight: 400);
   letter-spacing: -1px;
+  @include media-tablet {
+    @include font($size: 2rem, $height: 2rem, $weight: 400);
+  }
 }
 
 .new-collection__footer {
@@ -71,6 +84,27 @@
   letter-spacing: -3px;
   @include font($size: 8rem, $height: 7.1rem, $weight: 400);
   width: 66%;
+  @include media-desktop {
+    @include font($size: 6rem, $height: 6.1rem, $weight: 400);
+  }
+  @include media-laptop-lg {
+    width: 61%;
+    @include font($size: 5rem, $height: 5.1rem, $weight: 400);
+  }
+  @include media-laptop {
+    @include font($size: 4rem, $height: 4.1rem, $weight: 400);
+  }
+  @include media-tablet-lg {
+    @include font($size: 3.5rem, $height: 3.6rem, $weight: 400);
+  }
+  @include media-tablet {
+    @include font($size: 2.8rem, $height: 3.2rem, $weight: 400);
+  }
+  @include media-tablet-sm {
+    @include font($size: 5rem, $height: 5.1rem, $weight: 400);
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
 .new-collection__subtitle {
@@ -79,6 +113,23 @@
   text-align: right;
   letter-spacing: -0.03em;
   border-top: 1px solid $color-white;
+  @include media-laptop-lg {
+    padding-top: 10px;
+    @include font($size: 1.4rem, $height: 2.4rem, $weight: 400);
+  }
+  @include media-laptop {
+    padding-top: 5px;
+    @include font($size: 1.2rem, $height: 2rem, $weight: 400);
+  }
+  @include media-tablet-lg {
+    @include font($size: 1rem, $height: 1.8rem, $weight: 400);
+  }
+  @include media-tablet {
+    @include font($size: 0.9rem, $height: 1.6rem, $weight: 400);
+  }
+  @include media-tablet-sm {
+    text-align: left;
+  }
 }
 
 .new-collection__description {
@@ -88,6 +139,30 @@
   min-width: 181px;
   margin-right: 35px;
   margin-bottom: 60px;
+  @include media-laptop-lg {
+    margin-right: 15px;
+    width: 160px;
+    min-width: 160px;
+  }
+  @include media-laptop {
+    margin-right: 0;
+    width: 140px;
+    min-width: 140px;
+    margin-bottom: 30px;
+  }
+  @include media-tablet-lg {
+    width: 120px;
+    min-width: 120px;
+  }
+  @include media-tablet {
+    width: 105px;
+    min-width: 105px;
+  }
+  @include media-tablet-sm {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
 }
 
 .new-collection__price {
@@ -95,12 +170,33 @@
   text-align: right;
   @include font($size: 3.5rem, $height: 3.5rem, $weight: 400);
   letter-spacing: -1px;
+  @include media-laptop-lg {
+    @include font($size: 3rem, $height: 3rem, $weight: 400);
+    margin-bottom: 20px;
+  }
+  @include media-laptop {
+    @include font($size: 2.5rem, $height: 2.5rem, $weight: 400);
+    margin-bottom: 15px;
+  }
+  @include media-tablet-lg {
+    @include font($size: 2rem, $height: 2rem, $weight: 400);
+  }
+  @include media-tablet {
+    @include font($size: 1.8rem, $height: 1.8rem, $weight: 400);
+  }
+  @include media-tablet-sm {
+    text-align: left;
+  }
 }
 
 .new-collection__logo {
   width: 130px;
   margin-left: auto;
   padding-bottom: 30px;
+  @include media-tablet {
+    width: 110px;
+    padding-bottom: 0;
+  }
 }
 
 .new-collection__controls {
@@ -112,6 +208,9 @@
 .new-collection__cards {
   display: flex;
   gap: 8px;
+  @include media-tablet-sm {
+    display: none;
+  }
 }
 
 .new-collection__card {
@@ -124,5 +223,80 @@
   }
   :last-child {
     @include font($size: 3.5rem, $height: 3.5rem, $weight: 400);
+  }
+  @include media-laptop-lg {
+    min-width: 260px;
+    :first-child {
+      @include font($size: 1.4rem, $height: 190%, $weight: 500);
+    }
+    :last-child {
+      @include font($size: 3rem, $height: 3rem, $weight: 400);
+    }
+  }
+  @include media-laptop {
+    min-width: 220px;
+    :first-child {
+      @include font($size: 1.2rem, $height: 190%, $weight: 500);
+    }
+    :last-child {
+      @include font($size: 2.5rem, $height: 2.5rem, $weight: 400);
+    }
+  }
+  @include media-tablet-lg {
+    min-width: 180px;
+    :first-child {
+      @include font($size: 1rem, $height: 190%, $weight: 500);
+    }
+    :last-child {
+      @include font($size: 2rem, $height: 2rem, $weight: 400);
+    }
+  }
+  @include media-tablet {
+    min-width: 140px;
+    :first-child {
+      @include font($size: 0.9rem, $height: 190%, $weight: 500);
+    }
+    :last-child {
+      @include font($size: 1.8rem, $height: 1.8rem, $weight: 400);
+    }
+  }
+}
+
+.new-collection__button {
+  @include media-laptop {
+    width: 140px;
+    height: 45px;
+    padding: 15px 25px;
+    @include font($size: 1.2rem, $height: 1.5rem, $weight: 400);
+    img {
+      width: 12px;
+    }
+    @include media-tablet-lg {
+      width: 120px;
+      height: 40px;
+      padding: 10px 12px;
+      @include font($size: 1rem, $height: 1.2rem, $weight: 400);
+      img {
+        width: 10px;
+      }
+    }
+    @include media-tablet {
+      width: 100px;
+      height: 35px;
+      padding: 8px 10px;
+      @include font($size: 0.9rem, $height: 1.1rem, $weight: 400);
+      img {
+        width: 8px;
+      }
+    }
+    @include media-mobile {
+      flex: 1;
+      height: 65px;
+      padding: 20px 30px;
+      @include font($size: 1.6rem, $height: 1.8rem, $weight: 400);
+      img {
+        width: 14px;
+      }
+    }
   }
 }

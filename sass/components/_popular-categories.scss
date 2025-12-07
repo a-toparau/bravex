@@ -3,6 +3,9 @@
 .popular-categories {
   color: $color-white;
   padding: 0 20px;
+  @include media-tablet {
+    padding: 0 15px;
+  }
 }
 
 .popular-categories__header {
@@ -11,11 +14,28 @@
   padding: 60px 0;
   @include font($size: 3.5rem, $height: 4.4rem, $weight: 400);
   letter-spacing: -1px;
+  @include media-tablet {
+    padding: 40px 0;
+    @include font($size: 3rem, $height: 3.4srem, $weight: 400);
+  }
+  @include media-mobile {
+    padding: 30px 0;
+    @include font($size: 2rem, $height: 2.6rem, $weight: 400);
+  }
 }
 
 .popular-categories__content {
   gap: 25px;
   margin-bottom: 40px;
+  & > * {
+    @include media-tablet-lg {
+      flex-basis: 22%;
+    }
+  }
+  @include media-tablet {
+    @include columns($width: 47%);
+    gap: 18px;
+  }
 }
 
 .popular-categories__title {
@@ -26,7 +46,6 @@
 
 .popular-categories__card {
   position: relative;
-  // flex-basis: 18%;
   &::after {
     position: absolute;
     content: '';
@@ -52,13 +71,43 @@
   width: 100%;
   height: 100%;
   padding: 35px 30px;
-  @include font($size: 3.5rem, $height: 3rem, $weight: 400);
+  @include font($size: 3.5rem, $height: 3.6rem, $weight: 400);
   letter-spacing: -1px;
+  @include media-desktop {
+    @include font($size: 3.2rem, $height: 3.3rem, $weight: 400);
+  }
+  @include media-laptop-lg {
+    @include font($size: 2.8rem, $height: 2.9rem, $weight: 400);
+    padding: 30px;
+  }
+  @include media-laptop {
+    @include font($size: 2.2rem, $height: 2.3rem, $weight: 400);
+    padding: 20px;
+  }
+  @include media-tablet-lg {
+    @include font($size: 1.9rem, $height: 2rem, $weight: 400);
+    padding: 10px;
+  }
+  @include media-tablet {
+    padding: 20px 10px;
+  }
+  @include media-mobile-sm {
+    @include font($size: 1.6rem, $height: 1.7rem, $weight: 400);
+  }
 }
 
 .popular-categories__button {
   margin: 0 auto 70px;
   img {
     rotate: -45deg;
+  }
+  @include media-tablet-sm {
+    display: none;
+  }
+}
+
+.popular-categories__logo {
+  @include media-tablet-sm {
+    display: none;
   }
 }

@@ -11,6 +11,14 @@
   padding: 60px 0;
   @include font($size: 3.5rem, $height: 4.4rem, $weight: 400);
   letter-spacing: -1px;
+  img {
+    @include media-tablet-sm {
+      display: none;
+    }
+  }
+  @include media-mobile {
+    @include font($size: 2rem, $height: 2.6rem, $weight: 400);
+  }
 }
 
 .advantages__title {
@@ -28,11 +36,27 @@
   column-gap: 25px;
   row-gap: 150px;
   justify-content: space-between;
+  @include media-tablet {
+    grid-template-columns: repeat(2, max-content);
+    gap: 18px;
+  }
 }
 
 .advantages__card {
   display: flex;
   gap: 20px;
+  @include media-laptop {
+    flex-direction: column;
+    gap: 16px;
+  }
+  @include media-tablet {
+    flex-direction: row;
+    gap: 20px;
+  }
+  @include media-tablet-sm {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 .advantages__image {
@@ -48,6 +72,33 @@
     width: 40px;
     height: 40px;
   }
+  @include media-laptop-lg {
+    width: 70px;
+    min-width: 70px;
+    height: 70px;
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  @include media-laptop {
+    width: 65px;
+    min-width: 65px;
+    height: 65px;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  @include media-mobile {
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    img {
+      width: 29px;
+      height: 29px;
+    }
+  }
 }
 
 .advantages__info {
@@ -62,6 +113,20 @@
   & :last-child {
     @include font($size: 1.4rem, $height: 1.9rem, $weight: 400);
     color: #858585;
+  }
+  @include media-laptop-lg {
+    width: 180px;
+    @include font($size: 1.8rem, $height: 2.3rem, $weight: 500);
+    & :last-child {
+      @include font($size: 1.2rem, $height: 1.7rem, $weight: 400);
+    }
+  }
+  @include media-laptop {
+    width: 160px;
+    @include font($size: 1.6rem, $height: 2.1rem, $weight: 500);
+    & :last-child {
+      @include font($size: 1.1rem, $height: 1.6rem, $weight: 400);
+    }
   }
 }
 

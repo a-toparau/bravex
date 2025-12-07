@@ -3,6 +3,9 @@
 .icon-button {
   width: 45px;
   height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   background: none;
   border-radius: 4px;
@@ -16,15 +19,49 @@
     filter: grayscale(100%) brightness(70%);
   }
 
-  @include media-mobilesmall {
+  @include media-laptop {
+    width: 30px;
+    height: 30px;
+    img {
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  @include media-tablet-lg {
     width: 26px;
     height: 26px;
-    background: $color-icon-button;
+    img {
+      width: 12px;
+      height: 12px;
+    }
+
+    @include media-tablet {
+      background: $color-icon-button;
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+  @include media-mobile-sm {
     img {
       width: 10px;
       height: 10px;
-      filter: brightness(0) invert(1);
     }
+  }
+}
+
+.burger-button {
+  background-color: rgba(70, 70, 70, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  span {
+    width: 45%;
+    height: 1px;
+    background: #adadad;
   }
 }
 
@@ -44,12 +81,14 @@
   img {
     width: 15px;
   }
+  @include media-tablet-sm {
+    width: 320px;
+  }
 }
 
 .button-card {
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  // background: transparent;
   backdrop-filter: blur(40px);
   background: rgba(255, 255, 255, 0.02);
   text-align: start;
@@ -57,6 +96,30 @@
   @include font($size: 3rem, $height: 3rem, $weight: 400);
   &:hover {
     background: #0840f4;
+  }
+  @include media-desktop {
+    max-width: 270px;
+    padding: 20px;
+    @include font($size: 2.6rem, $height: 2.7rem, $weight: 400);
+  }
+
+  @include media-laptop-lg {
+    max-width: 220px;
+    padding: 15px;
+    @include font($size: 2rem, $height: 2.1rem, $weight: 400);
+  }
+  @include media-laptop {
+    max-width: 180px;
+    padding: 10px;
+    @include font($size: 1.6rem, $height: 1.7rem, $weight: 400);
+  }
+  @include media-tablet-lg {
+    max-width: 140px;
+    @include font($size: 1.3rem, $height: 1.4rem, $weight: 400);
+  }
+  @include media-tablet {
+    max-width: 100px;
+    @include font($size: 1rem, $height: 1.1rem, $weight: 400);
   }
 }
 

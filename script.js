@@ -99,24 +99,44 @@ lenis.on('scroll', (e) => {
 // new-items slider
 const newItemsSlider = new Swiper('#new-items-slider', {
   direction: 'horizontal',
-  //   centeredSlides: true,
   initialSlide: 0,
-  // loop: true,
   navigation: {
     nextEl: '.new-items-button-next',
     prevEl: '.new-items-button-prev',
   },
 
-  slidesPerView: 3.4,
-  spaceBetween: 15,
   speed: 500,
 
-  //   breakpoints: {
-  //     1000: {
-  //       slidesPerView: 1.7,
-  //       spaceBetween: 14,
-  //     },
-  //   },
+  breakpoints: {
+    1400: {
+      slidesPerView: 3.4,
+      spaceBetween: 15,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 15,
+    },
+
+    992: {
+      slidesPerView: 2.5,
+      spaceBetween: 15,
+    },
+
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 12,
+    },
+
+    576: {
+      slidesPerView: 1.4,
+      spaceBetween: 10,
+    },
+
+    0: {
+      slidesPerView: 1.2,
+      spaceBetween: 8,
+    },
+  },
 
   simulateTouch: true,
   allowTouchMove: true,
@@ -124,27 +144,47 @@ const newItemsSlider = new Swiper('#new-items-slider', {
 
 const insightsSlider = new Swiper('#insights-slider', {
   direction: 'horizontal',
-  //   centeredSlides: true,
   initialSlide: 0,
-  // loop: true,
+
   navigation: {
     nextEl: '.insights-button-next',
     prevEl: '.insights-button-prev',
   },
 
-  slidesPerView: 3.4,
-  spaceBetween: 15,
   speed: 500,
-
-  //   breakpoints: {
-  //     1000: {
-  //       slidesPerView: 1.7,
-  //       spaceBetween: 14,
-  //     },
-  //   },
-
   simulateTouch: true,
   allowTouchMove: true,
+  breakpointsBase: 'window',
+
+  slidesPerView: 3.4,
+  spaceBetween: 15,
+
+  breakpoints: {
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 15,
+    },
+
+    992: {
+      slidesPerView: 2.5,
+      spaceBetween: 15,
+    },
+
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 12,
+    },
+
+    576: {
+      slidesPerView: 1.5,
+      spaceBetween: 10,
+    },
+
+    0: {
+      slidesPerView: 1.2,
+      spaceBetween: 8,
+    },
+  },
 });
 
 // burger-menu

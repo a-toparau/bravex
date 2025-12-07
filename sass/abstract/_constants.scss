@@ -19,7 +19,14 @@ $color-yellow: #fab005;
 $color-red: #f03e3d;
 $color-blue: #4dadf7;
 
-$content-width: 1197px;
+$desktop-width: 1920px;
+
+$laptop-lg-width: 1440px;
+$laptop-width: 1200px;
+
+$tablet-lg-width: 992px;
 $tablet-width: 768px;
-$mobile-big-width: 414px;
-$mobile-small-width: 360px;
+$tablet-sm-width: 576px;
+
+$mobile-lg-width: 414px;
+$mobile-sm-width: 360px;

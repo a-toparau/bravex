@@ -5,11 +5,19 @@
   padding: 80px 0 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   color: $color-white;
+  @include media-tablet-sm {
+    padding-top: 0;
+    border-top: none;
+  }
 }
 
 .footer__layout {
   display: flex;
   justify-content: space-between;
+  @include media-tablet-sm {
+    flex-direction: column;
+    gap: 50px;
+  }
 }
 
 .footer__navigation {
@@ -18,8 +26,9 @@
   gap: 50px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: 'a b c d';
-  @include media-laptop {
+  @include media-laptop-lg {
     grid-template-columns: 1fr 1fr;
+    gap: 25px;
     grid-template-areas:
       'a b'
       'a c'
@@ -32,6 +41,18 @@
   display: flex;
   flex-direction: column;
   gap: 85px;
+  @include media-tablet {
+    width: 125px;
+    gap: 50px;
+    margin-left: 8px;
+  }
+  @include media-tablet-sm {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-left: 0;
+  }
 }
 
 .footer__links {
@@ -43,12 +64,18 @@
 .footer__title {
   @include font($size: 2.5rem, $height: 2.5rem, $weight: 400);
   margin-bottom: 20px;
+  @include media-tablet {
+    @include font($size: 2rem, $height: 2rem, $weight: 400);
+  }
 }
 
 .footer__link {
   @include font($size: 1.8rem, $height: 2.4rem, $weight: 400);
   letter-spacing: -1px;
   color: #858585;
+  @include media-tablet {
+    @include font($size: 1.6rem, $height: 2rem, $weight: 400);
+  }
 }
 
 .footer__socials {
@@ -63,6 +90,13 @@
     width: 20px;
     height: 20px;
   }
+  @include media-tablet {
+    gap: 10px;
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
 }
 
 .footer__address {
@@ -74,6 +108,13 @@
     @include font($size: 1.4rem, $height: 2.4rem, $weight: 400);
     color: #858585;
   }
+  @include media-tablet {
+    gap: 10px;
+    @include font($size: 1.6rem, $height: 1.6rem, $weight: 700);
+    :last-child {
+      @include font($size: 1.2rem, $height: 2rem, $weight: 400);
+    }
+  }
 }
 
 .footer__logos {
@@ -82,6 +123,14 @@
   justify-content: space-between;
   div:last-child {
     width: 130px;
+  }
+  @include media-tablet-sm {
+    flex-direction: column-reverse;
+    gap: 80px;
+    align-items: center;
+    div:last-child {
+      width: auto;
+    }
   }
 }
 

@@ -1,33 +1,61 @@
 @use '../abstract/index' as *;
 
-
 .header {
-   width: 100%;
-    padding: 35px;
-    padding-right: 20px;
-    display: flex;
-    gap: 20px;
-    background-color: $color-black;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 14px;
+  width: 100%;
+  padding: 35px;
+  padding-right: 20px;
+  display: flex;
+  gap: 20px;
+  background-color: $color-black;
+  align-items: center;
+  justify-content: space-between;
+  @include font($size: 1.4rem, $weight: 500);
+  @include media-laptop-lg {
+    padding: 25px 10px 25px 25px;
+  }
+  @include media-laptop {
+    padding: 25px 10px 25px 25px;
+  }
+  @include media-tablet-lg {
+    gap: 19px;
+  }
+  @include media-tablet {
+    padding: 12px 10px;
+  }
 }
 
 .header__logo {
-    width: 130px;
-    @include media-mobilesmall {
-      width: 88px;
-    }
+  width: 130px;
+  @include media-laptop {
+    width: 110px;
+  }
+  @include media-tablet-lg {
+    width: 100px;
+  }
+  @include media-mobile-sm {
+    width: 88px;
+  }
 }
 
 .header__navigation {
   display: flex;
   gap: 60px;
   > li {
-    font-weight: 500;
     color: #fff;
   }
-  @include media-mobilesmall {
+  @include media-laptop-lg {
+    gap: 45px;
+    font-size: 1.3rem;
+  }
+  @include media-laptop {
+    gap: 25px;
+    font-size: 1.2rem;
+  }
+  @include media-tablet-lg {
+    gap: 14px;
+    font-size: 1rem;
+  }
+  @include media-tablet {
     display: none;
   }
 }
@@ -35,6 +63,19 @@
 .header__controls {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
+  &:last-child {
+    @include media-tablet {
+      > *:not(:last-child) {
+        display: none;
+      }
+    }
+  }
 
+  &_mobile {
+    display: none;
+    @include media-tablet {
+      display: flex;
+    }
+  }
 }
