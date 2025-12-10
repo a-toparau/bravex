@@ -98,8 +98,7 @@ a {
  * Improve readability of focused elements when they are also in an
  * active/hover state.
  */
-a:active,
-a:hover {
+a:active, a:hover {
   outline: 0;
 }
 
@@ -276,9 +275,9 @@ select {
  *  Known issue: inner spacing remains in IE 6.
  */
 button,
-html input[type='button'],
-input[type='reset'],
-input[type='submit'] {
+html input[type=button],
+input[type=reset],
+input[type=submit] {
   -webkit-appearance: button; /* 2 */
   cursor: pointer; /* 3 */
 }
@@ -313,8 +312,8 @@ input {
  * 2. Remove excess padding in IE 8/9/10.
  *  Known issue: excess padding remains in IE 6.
  */
-input[type='checkbox'],
-input[type='radio'] {
+input[type=checkbox],
+input[type=radio] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -324,8 +323,8 @@ input[type='radio'] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -333,7 +332,7 @@ input[type='number']::-webkit-outer-spin-button {
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
  */
-input[type='search'] {
+input[type=search] {
   -webkit-appearance: textfield; /* 1 */
   box-sizing: content-box; /* 2 */
 }
@@ -343,8 +342,8 @@ input[type='search'] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-decoration {
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -411,14 +410,12 @@ p {
   margin: 0;
 }
 
-.insights__button,
-.new-items__button,
-.slider-button {
+.insights__button, .new-items__button, .slider-button {
   transition: all 0.3s ease-out;
 }
 
 body {
-  font-family: 'HelveticaNeueCyr', sans-serif;
+  font-family: "HelveticaNeueCyr", sans-serif;
 }
 
 html {
@@ -549,7 +546,7 @@ body {
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
   background: rgba(255, 255, 255, 0.02);
   text-align: start;
   max-width: 310px;
@@ -677,7 +674,7 @@ body {
 
 .loader:before,
 .loader:after {
-  content: '';
+  content: "";
   border-radius: 50%;
   position: absolute;
   inset: 0;
@@ -877,13 +874,13 @@ body {
   display: grid;
   gap: 50px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: 'a b c d';
+  grid-template-areas: "a b c d";
 }
 @media (max-width: 1440px) {
   .footer__navigation {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
-    grid-template-areas: 'a b' 'a c' 'a d';
+    grid-template-areas: "a b" "a c" "a d";
   }
 }
 
@@ -1083,7 +1080,7 @@ body {
 }
 .explore::after {
   position: absolute;
-  content: '';
+  content: "";
   bottom: 0;
   left: 0;
   width: 100%;
@@ -1116,7 +1113,7 @@ body {
 }
 @media (max-width: 768px) {
   .explore {
-    max-height: calc(100vh - 50px);
+    max-height: calc(var(--fixed-vh) - 50px);
   }
 }
 
@@ -1127,7 +1124,7 @@ body {
   left: -13%;
   width: 115%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .explore__content {
@@ -1398,7 +1395,7 @@ body {
 }
 .popular-categories__card::after {
   position: absolute;
-  content: '';
+  content: "";
   bottom: 0;
   left: 0;
   width: 100%;
@@ -1551,7 +1548,7 @@ body {
 }
 .catalog-overview::after {
   position: absolute;
-  content: '';
+  content: "";
   bottom: 0;
   left: 0;
   width: 100%;
@@ -1562,6 +1559,7 @@ body {
 @media (max-width: 430px) {
   .catalog-overview {
     margin-bottom: 50px;
+    max-height: var(--fixed-vh);
   }
 }
 
@@ -1569,7 +1567,7 @@ body {
   width: 100%;
   height: 118%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   position: absolute;
   bottom: 0;
 }
@@ -1906,6 +1904,7 @@ body {
 .new-items__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 35px 25px;
 }
 .new-items__header p {
@@ -1963,6 +1962,7 @@ body {
 
 .new-items__controls {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 @media (max-width: 1600px) {
@@ -2037,7 +2037,7 @@ body {
   width: 100%;
   height: calc(100% - 85px);
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .new-items__info {
@@ -2109,7 +2109,7 @@ body {
     font-size: 2.4rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 2.4rem;
+    line-height: 2rem;
   }
 }
 @media (max-width: 1440px) {
@@ -2121,7 +2121,7 @@ body {
     font-size: 2.1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 2.1rem;
+    line-height: 1.8rem;
   }
 }
 @media (max-width: 992px) {
@@ -2132,7 +2132,7 @@ body {
 
 .advantages {
   color: #ffffff;
-  padding: 0 20px;
+  padding: 30px 20px;
 }
 
 .advantages__header {
@@ -2168,7 +2168,7 @@ body {
 }
 @media (max-width: 430px) {
   .advantages__header {
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-style: normal;
     font-weight: 400;
     line-height: 2.6rem;
@@ -2185,7 +2185,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, max-content);
   -moz-column-gap: 25px;
-  column-gap: 25px;
+       column-gap: 25px;
   row-gap: 150px;
   justify-content: space-between;
 }
@@ -2335,7 +2335,7 @@ body {
   max-width: 210px;
 }
 
-.advantages__card:nth-child(n + 3) .advantages__info :last-child {
+.advantages__card:nth-child(n+3) .advantages__info :last-child {
   max-width: 185px;
 }
 
@@ -2350,7 +2350,7 @@ body {
 }
 .new-collection::after {
   position: absolute;
-  content: '';
+  content: "";
   bottom: 0;
   left: 0;
   width: 100%;
@@ -2361,7 +2361,7 @@ body {
 @media (max-width: 430px) {
   .new-collection {
     height: 585px;
-    max-height: 100vh;
+    max-height: var(--fixed-vh);
     margin-bottom: 20px;
   }
 }
@@ -2370,7 +2370,7 @@ body {
   height: 100%;
   width: 106%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   position: absolute;
   bottom: 0;
   left: -3%;
@@ -2486,27 +2486,27 @@ body {
 }
 
 .new-collection__title {
-  letter-spacing: -3px;
+  letter-spacing: -1px;
   width: 66%;
   font-size: 10rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 7.1rem;
 }
 @media (max-width: 1600px) {
   .new-collection__title {
-    font-size: 8rem;
+    font-size: 8.4rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 7.1rem;
   }
 }
 @media (max-width: 1440px) {
   .new-collection__title {
     width: 61%;
-    font-size: 7.5rem;
+    font-size: 7.7rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 7rem;
   }
 }
@@ -2514,7 +2514,7 @@ body {
   .new-collection__title {
     font-size: 4rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 4.1rem;
   }
 }
@@ -2522,7 +2522,7 @@ body {
   .new-collection__title {
     font-size: 3.5rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 3.6rem;
   }
 }
@@ -2530,7 +2530,7 @@ body {
   .new-collection__title {
     font-size: 2.8rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 3.2rem;
   }
 }
@@ -2538,7 +2538,7 @@ body {
   .new-collection__title {
     font-size: 5rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 5.1rem;
     width: 100%;
     margin-bottom: 15px;
@@ -2548,7 +2548,7 @@ body {
   .new-collection__title {
     font-size: 5.5rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 5.55rem;
   }
 }
@@ -2556,7 +2556,7 @@ body {
   .new-collection__title {
     font-size: 5rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 5.1rem;
   }
 }
@@ -3091,7 +3091,7 @@ body {
   width: 100%;
   height: calc(100% - 85px);
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .insights__info {
@@ -3192,4 +3192,4 @@ body {
     width: 10px;
     height: 10px;
   }
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
