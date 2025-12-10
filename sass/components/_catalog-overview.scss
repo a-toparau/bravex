@@ -20,6 +20,7 @@
   }
   @include media-mobile {
     margin-bottom: 50px;
+    max-height: var(--fixed-vh);
   }
 }
 
