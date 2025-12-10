@@ -50,7 +50,7 @@
   margin-bottom: 40px;
   & > * {
     @include media-laptop-lg {
-      flex-basis: 23.4%;
+      flex-basis: 23.3%;
     }
     @include media-tablet-lg {
       flex-basis: 22%;
@@ -59,6 +59,10 @@
   @include media-tablet {
     @include columns($width: 47%);
     gap: 18px;
+  }
+  @include media-mobile {
+    @include columns($width: 48.4%);
+    gap: 8px;
   }
 }
 

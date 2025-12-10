@@ -168,6 +168,10 @@
 
 .catalog-overview__card {
   flex: 1;
+  padding: 30px 25px;
+  @include media-laptop-xl {
+    padding: 20px;
+  }
 }
 
 .catalog-overview__button {
@@ -216,6 +220,7 @@
   display: none;
   &-item {
     display: flex;
+    flex-basis: 48.5%;
     align-items: end;
     height: 160px;
     background: #003cca;

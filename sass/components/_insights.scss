@@ -11,6 +11,7 @@
 .insights__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 35px 25px;
   p {
     @include font($size: 3.5rem, $height: 126%, $weight: 400);
@@ -120,6 +121,9 @@
   @include media-laptop-xl {
     @include font($size: 2.6rem, $height: 2.6rem, $weight: 400);
   }
+  @include media-laptop-lg {
+    @include font($size: 2.3rem, $height: 2.3rem, $weight: 400);
+  }
   @include media-tablet {
     @include font($size: 2.2rem, $height: 2.2rem, $weight: 400);
   }
@@ -164,11 +168,11 @@
     }
   }
   @include media-mobile {
-    width: 25px;
-    height: 25px;
+    width: 26px;
+    height: 26px;
     img {
-      width: 7px;
-      height: 7px;
+      width: 10px;
+      height: 10px;
     }
   }
 }

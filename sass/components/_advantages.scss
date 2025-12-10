@@ -54,8 +54,10 @@
 .advantages__card {
   display: flex;
   gap: 20px;
+  align-items: center;
   @include media-laptop {
     flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
   }
   @include media-tablet {
@@ -82,15 +84,6 @@
     height: 40px;
   }
   @include media-laptop-xl {
-    width: 75px;
-    min-width: 75px;
-    height: 75px;
-    img {
-      width: 38px;
-      height: 38px;
-    }
-  }
-  @include media-laptop-lg {
     width: 70px;
     min-width: 70px;
     height: 70px;
@@ -99,7 +92,8 @@
       height: 36px;
     }
   }
-  @include media-laptop {
+
+  @include media-laptop-lg {
     width: 65px;
     min-width: 65px;
     height: 65px;
@@ -134,19 +128,13 @@
   }
   @include media-laptop-xl {
     width: 200px;
-    @include font($size: 1.9rem, $height: 2.4rem, $weight: 500);
-    & :last-child {
-      @include font($size: 1.3rem, $height: 1.8rem, $weight: 400);
-    }
-  }
-  @include media-laptop-lg {
-    width: 180px;
+    gap: 6px;
     @include font($size: 1.8rem, $height: 2.3rem, $weight: 500);
     & :last-child {
       @include font($size: 1.2rem, $height: 1.7rem, $weight: 400);
     }
   }
-  @include media-laptop {
+  @include media-laptop-lg {
     width: 160px;
     @include font($size: 1.6rem, $height: 2.1rem, $weight: 500);
     & :last-child {
