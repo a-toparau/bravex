@@ -23,7 +23,7 @@
       @include font($size: 2rem, $height: 126%, $weight: 400);
     }
     @include media-mobile {
-      @include font($size: 2.2rem, $height: 126%, $weight: 400);
+      @include font($size: 2.3rem, $height: 2.7rem, $weight: 400);
     }
     @include media-mobile-sm {
       @include font($size: 2rem, $height: 126%, $weight: 400);
