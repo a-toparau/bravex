@@ -1,0 +1,147 @@
+@use '../abstract/index' as *;
+
+.checkout {
+  color: $color-white;
+  padding: 100px 20px 50px 25px;
+  @include media-laptop-xl {
+    padding: 80px 16px 30px 21px;
+  }
+  @include media-laptop-lg {
+    padding: 70px 15px 30px 20px;
+  }
+  @include media-laptop {
+    padding: 60px 15px 24px 20px;
+  }
+  @include media-tablet {
+    padding: 60px 16px 15px;
+  }
+}
+
+.checkout__title {
+  @include font($size: 6rem, $height: 7.5rem, $weight: 400);
+  margin-bottom: 110px;
+  @include media-laptop-xl {
+    margin-bottom: 90px;
+    @include font($size: 5rem, $height: 6.2rem, $weight: 400);
+  }
+  @include media-laptop-lg {
+    margin-bottom: 80px;
+    @include font($size: 4.8rem, $height: 126%, $weight: 400);
+  }
+  @include media-laptop {
+    margin-bottom: 70px;
+    @include font($size: 4.2rem, $height: 126%, $weight: 400);
+  }
+  @include media-mobile {
+    margin-bottom: 30px;
+    @include font($size: 3.2rem, $height: 4rem, $weight: 400);
+  }
+  @include media-mobile-sm {
+    margin-bottom: 25px;
+    @include font($size: 3rem, $height: 126%, $weight: 400);
+  }
+}
+
+.checkout__wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  @include media-tablet {
+    flex-direction: column;
+  }
+}
+.checkout__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @include media-laptop-xl {
+    gap: 38px;
+  }
+  @include media-laptop-lg {
+    gap: 32px;
+  }
+}
+
+.checkout__tabs {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  @include media-mobile {
+    justify-content: space-between;
+  }
+}
+
+.checkout__tab {
+  color: rgba($color: #ffffff, $alpha: 0.5);
+  @include font($size: 1.6rem, $height: 4rem, $weight: 400);
+  cursor: pointer;
+  &_active {
+    color: $color-white;
+    cursor: pointer;
+  }
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.checkout__form {
+  width: 468px;
+  display: flex;
+  flex-direction: column;
+  @include media-tablet-lg {
+    width: auto;
+  }
+}
+
+.checkout__form-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkout__double-row {
+  width: 100%;
+  display: flex;
+  gap: 6px;
+  > input {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.checkout__subtitle {
+  margin: 24px 0 20px;
+  @include font($size: 1.4rem, $height: 4rem, $weight: 500);
+  @include media-mobile {
+    margin: 20px 0 8px;
+  }
+}
+
+.checkout__shipping {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.checkout__button {
+  width: 230px;
+  height: 44px;
+  margin-top: 30px;
+  padding: 0;
+  justify-content: center;
+  background-color: #0840f4;
+}
+
+.checkout__summary {
+  min-height: 360px;
+  margin-top: 160px;
+  @include media-laptop-xl {
+    margin-top: 160px;
+  }
+  @include media-laptop-lg {
+    gap: 112px;
+  }
+  @include media-tablet {
+    margin-top: 60px;
+  }
+}

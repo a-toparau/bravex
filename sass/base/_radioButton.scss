@@ -1,0 +1,71 @@
+@use '../abstract/index' as *;
+
+.radio-button {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  cursor: pointer;
+  width: 100%;
+}
+
+.radio-button input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-button__custom {
+  width: 16px;
+  height: 16px;
+  border: 1px solid $color-white;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color 0.2s ease;
+}
+
+.radio-button__custom::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #0840f4;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.radio-button input[type='radio']:checked + .radio-button__custom {
+  border-color: #0840f4;
+}
+
+.radio-button input[type='radio']:checked + .radio-button__custom::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-button__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.radio-button__title {
+  @include font($size: 1.4rem, $height: 1.4rem, $weight: 400);
+  color: $color-white;
+}
+
+.radio-button__description {
+  @include font($size: 1.2rem, $height: 124%, $weight: 400);
+  color: $color-white;
+  width: 270px;
+}
+
+.radio-button__price {
+  margin-left: auto;
+  @include font($size: 1.6rem, $height: 1.6rem, $weight: 400);
+  @include media-mobile {
+    display: none;
+  }
+}

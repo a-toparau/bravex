@@ -1,0 +1,20 @@
+@use '../abstract/index' as *;
+
+.input {
+  background-color: #161616;
+  border-radius: 8px;
+  height: 44px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  @include font($size: 1.4rem, $height: 100%, $weight: 400);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &:focus {
+    outline: none;
+    border: 1px solid $color-white;
+  }
+  &::placeholder {
+    @include font($size: 1.2rem, $height: 140%, $weight: 400);
+    color: $color-white;
+  }
+}

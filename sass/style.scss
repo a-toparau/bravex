@@ -8,6 +8,8 @@
 //Base
 @use 'base/base';
 @use 'base/buttons';
+@use 'base/input';
+@use 'base/radioButton';
 @use 'base/icons';
 @use 'base/loader';
 
@@ -16,7 +18,7 @@
 @use 'layouts/columns';
 @use 'layouts/footer';
 
-//explore
+//components
 @use 'components/explore';
 @use 'components/popular-categories';
 @use 'components/catalog-overview';
@@ -24,3 +26,8 @@
 @use 'components/advantages';
 @use 'components/new-collection';
 @use 'components/insights';
+@use 'components/summary';
+
+//pages
+@use 'pages/cart';
+@use 'pages/checkout';

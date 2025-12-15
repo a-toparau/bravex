@@ -1,0 +1,196 @@
+@use '../abstract/index' as *;
+
+.summary {
+  color: $color-white;
+  background-color: #0840f4;
+  padding: 18px 20px 25px;
+  width: 610px;
+  height: fit-content;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  @include media-laptop-xl {
+    width: 560px;
+    min-height: 440px;
+  }
+  @include media-laptop-lg {
+    width: 500px;
+    min-height: 410px;
+  }
+  @include media-laptop {
+    width: 380px;
+    min-height: 370px;
+  }
+  @include media-tablet-lg {
+    width: 100%;
+    padding: 18px 11px 27px;
+  }
+  @include media-mobile {
+    min-height: 366px;
+  }
+  @include media-mobile-sm {
+    min-height: 346px;
+  }
+}
+
+.summary__title {
+  @include font($size: 2rem, $height: 124%, $weight: 500);
+  @include media-laptop-xl {
+    @include font($size: 1.9rem, $height: 124%, $weight: 500);
+  }
+  @include media-laptop {
+    @include font($size: 1.6rem, $height: 124%, $weight: 500);
+  }
+  @include media-mobile {
+    @include font($size: 2rem, $height: 124%, $weight: 500);
+  }
+}
+
+.summary__info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 25px;
+  margin-bottom: 35px;
+  padding-bottom: 45px;
+  border-bottom: 1px solid #eae4e0;
+  @include media-laptop-xl {
+    gap: 22px;
+    margin-top: 23px;
+    padding-bottom: 40px;
+  }
+  @include media-laptop {
+    gap: 18px;
+    margin-top: 20px;
+    padding-bottom: 34px;
+  }
+  @include media-mobile {
+    gap: 24px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-bottom: 45px;
+  }
+}
+
+.summary__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary__position {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary__subtitle {
+  @include font($size: 1.4rem, $height: 124%, $weight: 400);
+  @include media-laptop-xl {
+    @include font($size: 1.3rem, $height: 124%, $weight: 400);
+  }
+  @include media-laptop {
+    @include font($size: 1.3rem, $height: 124%, $weight: 400);
+  }
+  @include media-mobile {
+    @include font($size: 1.4rem, $height: 124%, $weight: 400);
+  }
+}
+
+.summary__description {
+  @include font($size: 1.2rem, $height: 124%, $weight: 400);
+  @include media-laptop-xl {
+    @include font($size: 1.1rem, $height: 124%, $weight: 400);
+  }
+  @include media-laptop {
+    @include font($size: 1rem, $height: 124%, $weight: 400);
+  }
+  @include media-mobile {
+    @include font($size: 1.2rem, $height: 124%, $weight: 400);
+  }
+}
+
+.summary__price {
+  display: inline-block;
+  min-width: 130px;
+  text-align: left;
+  @include font($size: 1.4rem, $height: 100%, $weight: 700);
+  @include media-laptop-xl {
+    min-width: 120px;
+    @include font($size: 1.2rem, $height: 124%, $weight: 700);
+  }
+  @include media-laptop {
+    min-width: 100px;
+    @include font($size: 1.1rem, $height: 124%, $weight: 700);
+  }
+  @include media-mobile {
+    min-width: auto;
+    @include font($size: 1.4rem, $height: 100%, $weight: 700);
+  }
+}
+
+.summary__button {
+  width: 205px;
+  height: 52px;
+  border-radius: 12px;
+  margin-top: auto;
+  display: flex;
+  gap: 2px;
+  padding: 0px 25px;
+  align-items: center;
+  color: #0840f4;
+  background-color: $color-white;
+  span {
+    flex-grow: 1;
+    @include font($size: 1.6rem, $height: 2rem, $weight: 500);
+    text-align: center;
+    color: #0840f4;
+  }
+  img {
+    width: 15px;
+  }
+
+  @include media-laptop-xl {
+    width: 195px;
+    height: 48px;
+    span {
+      @include font($size: 1.5rem, $height: 1.8rem, $weight: 500);
+    }
+
+    img {
+      width: 14px;
+    }
+  }
+  @include media-laptop-lg {
+    width: 180px;
+    height: 44px;
+    span {
+      @include font($size: 1.5rem, $height: 1.8rem, $weight: 500);
+    }
+
+    img {
+      width: 14px;
+    }
+  }
+  @include media-laptop {
+    width: 140px;
+    height: 36px;
+    span {
+      @include font($size: 1.1rem, $height: 1.4rem, $weight: 500);
+    }
+
+    img {
+      width: 10px;
+    }
+  }
+  @include media-mobile {
+    width: 100%;
+    height: 52px;
+    padding: 0 30px;
+    span {
+      @include font($size: 1.6rem, $height: 1.8rem, $weight: 500);
+    }
+    img {
+      width: 15px;
+    }
+  }
+}

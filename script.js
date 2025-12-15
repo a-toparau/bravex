@@ -4,6 +4,7 @@ document.body.style.overflow = 'hidden';
 const loader = () => {
   document.body.style.overflow = '';
   const preloader = document.getElementById('preloader');
+  if (!preloader) return;
   const fadeout = setInterval(() => {
     const opacity = getComputedStyle(preloader).opacity;
     opacity > 0
