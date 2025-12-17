@@ -655,6 +655,7 @@ body {
 .input:focus {
   outline: none;
   border: 1px solid #ffffff;
+  background: #000;
 }
 .input::-moz-placeholder {
   font-size: 1.2rem;
@@ -3621,7 +3622,7 @@ body {
   color: #0840f4;
 }
 .summary__button img {
-  width: 15px;
+  width: 16px;
 }
 @media (max-width: 1600px) {
   .summary__button {
@@ -3721,11 +3722,11 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 7.5rem;
-  margin-bottom: 110px;
+  margin-bottom: 100px;
 }
 @media (max-width: 1600px) {
   .cart__title {
-    margin-bottom: 90px;
+    margin-bottom: 80px;
     font-size: 5rem;
     font-style: normal;
     font-weight: 400;
@@ -3734,7 +3735,7 @@ body {
 }
 @media (max-width: 1440px) {
   .cart__title {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
     font-size: 4.8rem;
     font-style: normal;
     font-weight: 400;
@@ -3743,7 +3744,7 @@ body {
 }
 @media (max-width: 1200px) {
   .cart__title {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
     font-size: 4.2rem;
     font-style: normal;
     font-weight: 400;
@@ -4071,11 +4072,11 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 7.5rem;
-  margin-bottom: 110px;
+  margin-bottom: 100px;
 }
 @media (max-width: 1600px) {
   .checkout__title {
-    margin-bottom: 90px;
+    margin-bottom: 80px;
     font-size: 5rem;
     font-style: normal;
     font-weight: 400;
@@ -4084,7 +4085,7 @@ body {
 }
 @media (max-width: 1440px) {
   .checkout__title {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
     font-size: 4.8rem;
     font-style: normal;
     font-weight: 400;
@@ -4093,7 +4094,7 @@ body {
 }
 @media (max-width: 1200px) {
   .checkout__title {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
     font-size: 4.2rem;
     font-style: normal;
     font-weight: 400;
@@ -4226,6 +4227,17 @@ body {
   padding: 0;
   justify-content: center;
   background-color: #0840f4;
+  border-radius: 12px;
+}
+@media (max-width: 1440px) {
+  .checkout__button {
+    border-radius: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .checkout__button {
+    border-radius: 12px;
+  }
 }
 
 .checkout__summary {

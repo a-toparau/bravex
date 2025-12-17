@@ -12,6 +12,7 @@
   &:focus {
     outline: none;
     border: 1px solid $color-white;
+    background: #000;
   }
   &::placeholder {
     @include font($size: 1.2rem, $height: 140%, $weight: 400);
