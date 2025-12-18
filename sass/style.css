@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ==========================================================================
    Normalize.scss settings
    ========================================================================== */
@@ -644,7 +645,7 @@ body {
   border-radius: 8px;
   height: 44px;
   padding: 0 22px;
-  border: 1px solid transparent;
+  border: 1px solid #393939;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 400;
@@ -662,14 +663,14 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-  color: #ffffff;
+  color: #b9b9b9;
 }
 .input::placeholder {
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-  color: #ffffff;
+  color: #b9b9b9;
 }
 
 .radio-button {
@@ -684,12 +685,14 @@ body {
   position: absolute;
   opacity: 0;
   pointer-events: none;
+  width: 16px;
+  height: 16px;
 }
 
 .radio-button__custom {
   width: 16px;
   height: 16px;
-  border: 1px solid #ffffff;
+  border: 1px solid #5a5a5a;
   border-radius: 50%;
   position: relative;
   flex-shrink: 0;
@@ -700,17 +703,13 @@ body {
   content: "";
   width: 8px;
   height: 8px;
-  background-color: #0840f4;
+  background-color: #ffffff;
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.2s ease;
-}
-
-.radio-button input[type=radio]:checked + .radio-button__custom {
-  border-color: #0840f4;
 }
 
 .radio-button input[type=radio]:checked + .radio-button__custom::after {
@@ -751,6 +750,66 @@ body {
   .radio-button__price {
     display: none;
   }
+}
+
+.checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox__custom {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  position: relative;
+  background-image: url("./../../assets/icons/checkboxBorder.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: grayscale(100%) brightness(0.8);
+}
+
+/* галочка как псевдо-слой */
+.checkbox__custom::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./../../assets/icons/checkboxTick.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0;
+  width: 9px;
+  height: 7px;
+  top: 51%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.1s ease;
+}
+
+/* checked — ТОЛЬКО галочка */
+.checkbox input[type=checkbox]:checked + .checkbox__custom {
+  filter: none;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox__custom::after {
+  opacity: 1;
+}
+
+.checkbox__title {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem;
+  color: #a8a8a8;
 }
 
 #preloader {
@@ -4200,6 +4259,11 @@ body {
   flex: 1;
   min-width: 0;
 }
+@media (max-width: 768px) {
+  .checkout__double-row > input:first-child {
+    flex-basis: 38%;
+  }
+}
 
 .checkout__subtitle {
   margin: 24px 0 20px;
@@ -4256,6 +4320,55 @@ body {
 }
 @media (max-width: 768px) {
   .checkout__summary {
+    margin-top: 50px;
+  }
+}
+
+.checkout__radio-button {
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+}
+
+.checkout__payment {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  margin-bottom: 25px;
+  margin-top: 70px;
+}
+@media (max-width: 1600px) {
+  .checkout__payment {
     margin-top: 60px;
   }
+}
+@media (max-width: 1440px) {
+  .checkout__payment {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 1200px) {
+  .checkout__payment {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .checkout__payment {
+    margin-top: 30px;
+  }
+}
+
+.checkout__payment-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout__payment-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.checkout__checkbox {
+  margin: 28px 0 10px;
 }/*# sourceMappingURL=style.css.map */
