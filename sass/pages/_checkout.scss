@@ -19,25 +19,25 @@
 
 .checkout__title {
   @include font($size: 6rem, $height: 7.5rem, $weight: 400);
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   @include media-laptop-xl {
-    margin-bottom: 80px;
+    margin-bottom: 18px;
     @include font($size: 5rem, $height: 6.2rem, $weight: 400);
   }
   @include media-laptop-lg {
-    margin-bottom: 70px;
+    margin-bottom: 16px;
     @include font($size: 4.8rem, $height: 126%, $weight: 400);
   }
   @include media-laptop {
-    margin-bottom: 60px;
+    margin-bottom: 14px;
     @include font($size: 4.2rem, $height: 126%, $weight: 400);
   }
   @include media-mobile {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     @include font($size: 3.2rem, $height: 4rem, $weight: 400);
   }
   @include media-mobile-sm {
-    margin-bottom: 25px;
+    margin-bottom: 22px;
     @include font($size: 3rem, $height: 126%, $weight: 400);
   }
 }
