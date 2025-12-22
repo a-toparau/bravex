@@ -37,18 +37,15 @@
 
 .catalog-section__card {
   position: relative;
-  // height: 540px;
   aspect-ratio: 445 / 537;
-  // @include media-laptop-xl {
-  // height: 510px;
-  // }
+  cursor: pointer;
 
   &::before {
     content: '';
     position: absolute;
     height: 100%;
     inset: 0;
-    background: #0840f499; // синий оверлей
+    background: #0840f499;
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
@@ -97,7 +94,7 @@
   display: flex;
   align-items: flex-end;
   top: 0;
-  width: 100%;
+  width: 65%;
   height: 100%;
   padding: 32px 26px;
   @include font($size: 3.5rem, $height: 3.6rem, $weight: 400);
@@ -111,6 +108,7 @@
   }
   @include media-laptop {
     @include font($size: 2.2rem, $height: 2.3rem, $weight: 400);
+    width: 60%;
     padding: 20px;
   }
   @include media-tablet-lg {
@@ -118,6 +116,7 @@
     padding: 10px;
   }
   @include media-tablet {
+    width: 100%;
     padding: 20px 10px;
   }
   @include media-mobile-sm {
@@ -130,12 +129,30 @@
   right: 26px;
   bottom: 26px;
   z-index: 2;
-
+  padding: 0 15px;
   width: 126px;
   height: 42px;
   border-radius: 9px;
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  @include media-laptop-xl {
+    width: 116px;
+    height: 38px;
+    @include font($size: 1.5rem, $height: 1.5rem, $weight: 400);
+    img {
+      width: 14px;
+    }
+  }
+  @include media-laptop {
+    width: 100px;
+    height: 32px;
+    right: 18px;
+    bottom: 18px;
+    @include font($size: 1.4rem, $height: 1.4rem, $weight: 400);
+    img {
+      width: 14px;
+    }
+  }
   @include media-tablet {
     display: none;
   }

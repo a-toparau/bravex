@@ -123,8 +123,13 @@
     @include font($size: 6rem, $height: 100%, $weight: 400);
     letter-spacing: 0;
   }
+  @include media-mobile {
+    @include font($size: 7.2rem, $height: 100%, $weight: 400);
+    max-width: 320px;
+  }
   @include media-mobile-sm {
     @include font($size: 7rem, $height: 100%, $weight: 400);
+    max-width: 320px;
   }
 }
 
@@ -173,13 +178,13 @@
       height: 46px;
       padding: 0 20px;
       border-radius: 10px;
-      @include font($size: 1.7rem, $height: 1.9rem, $weight: 500);
+      @include font($size: 1.6rem, $height: 1.7rem, $weight: 500);
       img {
         width: 12px;
       }
     }
     @include media-mobile-sm {
-      @include font($size: 1.6rem, $height: 1.8rem, $weight: 500);
+      @include font($size: 1.5rem, $height: 1.6rem, $weight: 500);
     }
   }
 }

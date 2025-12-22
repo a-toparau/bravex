@@ -4109,6 +4109,7 @@ body {
 .catalog-section__card {
   position: relative;
   aspect-ratio: 445/537;
+  cursor: pointer;
 }
 .catalog-section__card::before {
   content: "";
@@ -4161,7 +4162,7 @@ body {
   display: flex;
   align-items: flex-end;
   top: 0;
-  width: 100%;
+  width: 65%;
   height: 100%;
   padding: 32px 26px;
   font-size: 3.5rem;
@@ -4193,6 +4194,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 2.3rem;
+    width: 60%;
     padding: 20px;
   }
 }
@@ -4207,6 +4209,7 @@ body {
 }
 @media (max-width: 768px) {
   .catalog-section__subtitle {
+    width: 100%;
     padding: 20px 10px;
   }
 }
@@ -4224,11 +4227,40 @@ body {
   right: 26px;
   bottom: 26px;
   z-index: 2;
+  padding: 0 15px;
   width: 126px;
   height: 42px;
   border-radius: 9px;
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+@media (max-width: 1600px) {
+  .catalog-section__card-button {
+    width: 116px;
+    height: 38px;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+  .catalog-section__card-button img {
+    width: 14px;
+  }
+}
+@media (max-width: 1200px) {
+  .catalog-section__card-button {
+    width: 100px;
+    height: 32px;
+    right: 18px;
+    bottom: 18px;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4rem;
+  }
+  .catalog-section__card-button img {
+    width: 14px;
+  }
 }
 @media (max-width: 768px) {
   .catalog-section__card-button {
@@ -4917,13 +4949,13 @@ body {
 }
 @media (max-width: 1600px) {
   .thanks__title {
-    font-size: 7rem;
+    font-size: 6.7rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 7rem;
+    line-height: 6.7rem;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
   .thanks__title {
     font-size: 6rem;
     font-style: normal;
@@ -4931,7 +4963,15 @@ body {
     line-height: 6rem;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 1200px) {
+  .thanks__title {
+    font-size: 5.1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 5.1rem;
+  }
+}
+@media (max-width: 430px) {
   .thanks__title {
     font-size: 4rem;
     font-style: normal;
@@ -4953,6 +4993,22 @@ body {
   color: #888787;
   text-decoration: underline;
   font-weight: 500;
+}
+@media (max-width: 1600px) {
+  .thanks__subtitle {
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.2rem;
+  }
+}
+@media (max-width: 1440px) {
+  .thanks__subtitle {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+  }
 }
 @media (max-width: 1200px) {
   .thanks__subtitle {
@@ -4984,13 +5040,37 @@ body {
   font-weight: 500;
   line-height: 100%;
 }
+@media (max-width: 1600px) {
+  .thanks__button {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+  }
+}
 @media (max-width: 1440px) {
   .thanks__button {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
     border-radius: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  .thanks__button {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
   }
 }
 @media (max-width: 768px) {
   .thanks__button {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
     display: none;
   }
 }
@@ -5168,12 +5248,22 @@ body {
     letter-spacing: 0;
   }
 }
+@media (max-width: 430px) {
+  .catalog-cover__title {
+    font-size: 7.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    max-width: 320px;
+  }
+}
 @media (max-width: 360px) {
   .catalog-cover__title {
     font-size: 7rem;
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
+    max-width: 320px;
   }
 }
 
@@ -5244,10 +5334,10 @@ body {
     height: 46px;
     padding: 0 20px;
     border-radius: 10px;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.9rem;
+    line-height: 1.7rem;
   }
   .catalog-cover__button img {
     width: 12px;
@@ -5255,9 +5345,9 @@ body {
 }
 @media (max-width: 1200px) and (max-width: 360px) {
   .catalog-cover__button {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.8rem;
+    line-height: 1.6rem;
   }
 }/*# sourceMappingURL=style.css.map */
