@@ -1049,7 +1049,27 @@ body {
     line-height: 1.3rem;
   }
 }
+.select .select-trigger span {
+  position: absolute;
+  left: 45%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 40px);
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+  line-height: 1.2;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+.select .select-trigger.has-value span {
+  position: static;
+  transform: none;
+  max-width: 100%;
+  text-align: left;
+}
 .select .select-trigger img {
+  margin-left: auto;
+  flex-shrink: 0;
   width: 14px;
   transition: transform 0.3s ease;
 }

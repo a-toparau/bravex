@@ -36,7 +36,29 @@
       @include font($size: 1.2rem, $height: 1.3rem, $weight: 500);
     }
 
+    span {
+      position: absolute;
+      left: 45%;
+      transform: translateX(-50%);
+      max-width: calc(100% - 40px);
+      white-space: normal;
+      word-break: break-word;
+      text-align: center;
+      line-height: 1.2;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+
+    &.has-value span {
+      position: static;
+      transform: none;
+      max-width: 100%;
+      text-align: left;
+    }
+
     img {
+      margin-left: auto;
+      flex-shrink: 0;
       width: 14px;
       transition: transform 0.3s ease;
       @include media-laptop-xl {

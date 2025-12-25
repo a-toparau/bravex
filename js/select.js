@@ -11,6 +11,7 @@ selectTriggers.forEach((trigger) => {
   options.querySelectorAll('li').forEach((option) => {
     option.addEventListener('click', () => {
       trigger.querySelector('span').textContent = option.textContent;
+      trigger.classList.add('has-value');
       trigger.classList.remove('active');
       options.classList.remove('open');
     });
