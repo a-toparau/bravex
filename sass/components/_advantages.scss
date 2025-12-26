@@ -47,9 +47,10 @@
     grid-template-columns: repeat(2, max-content);
     gap: 18px;
   }
-  @include media-mobile {
-    row-gap: 50px;
-  }
+  // @include media-mobile {
+  //   grid-template-columns: repeat(2, minmax(140px, 1fr));
+  //   justify-content: space-between;
+  // }
 }
 
 .advantages__card {
@@ -143,6 +144,7 @@
     }
   }
   @include media-mobile {
+    width: 157px;
     & :last-child {
       width: 110px;
     }
@@ -167,8 +169,8 @@
   }
 }
 
-@include media-mobile {
-  .advantages__card:nth-child(2n) .advantages__info {
-    max-width: 120px;
-  }
-}
+// @include media-mobile {
+//   .advantages__card:nth-child(2n) .advantages__info {
+//     max-width: 120px;
+//   }
+// }

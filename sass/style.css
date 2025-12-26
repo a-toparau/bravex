@@ -2868,11 +2868,6 @@ body {
     gap: 18px;
   }
 }
-@media (max-width: 430px) {
-  .advantages__content {
-    row-gap: 50px;
-  }
-}
 
 .advantages__card {
   display: flex;
@@ -2998,6 +2993,9 @@ body {
   }
 }
 @media (max-width: 430px) {
+  .advantages__info {
+    width: 157px;
+  }
   .advantages__info :last-child {
     width: 110px;
   }
@@ -3027,11 +3025,6 @@ body {
   }
 }
 
-@media (max-width: 430px) {
-  .advantages__card:nth-child(2n) .advantages__info {
-    max-width: 120px;
-  }
-}
 .new-collection {
   width: 100%;
   height: 1000px;
