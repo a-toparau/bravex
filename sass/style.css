@@ -6389,7 +6389,7 @@ body {
 }
 @media (max-width: 992px) {
   .catalog__content {
-    gap: 15px;
+    gap: 20px;
     grid-template-columns: repeat(2, minmax(160px, 1fr));
   }
 }
@@ -6440,6 +6440,7 @@ body {
 }
 @media (max-width: 430px) {
   .catalog-card__image {
+    max-height: calc(100% - 62px);
     flex: 1;
   }
 }
