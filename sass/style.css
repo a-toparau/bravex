@@ -1267,17 +1267,19 @@ body {
   opacity: 1;
 }
 
-.select-sizes2-wrapper {
+.select-sizes-wrapper {
+  position: relative;
   width: 270px;
   height: 56px;
 }
 @media (max-width: 430px) {
-  .select-sizes2-wrapper {
-    width: 255px;
+  .select-sizes-wrapper {
+    display: flex;
+    flex: 1;
   }
 }
 
-.select-sizes2 {
+.select-sizes {
   position: absolute;
   width: 270px;
   height: 56px;
@@ -1285,23 +1287,22 @@ body {
   border-radius: 12px;
 }
 @media (max-width: 430px) {
-  .select-sizes2 {
-    width: 255px;
+  .select-sizes {
+    width: 100%;
   }
 }
-.select-sizes2.open {
+.select-sizes.open {
   height: auto;
   max-height: 190px;
   overflow: hidden;
 }
-.select-sizes2.open .select-sizes2__dropdown {
+.select-sizes.open .select-sizes__dropdown {
   max-height: 280px;
   opacity: 1;
   margin-top: 24px;
 }
 
-/* HEAD */
-.select-sizes2__head {
+.select-sizes__head {
   width: 100%;
   padding: 20px 15px;
   background: none;
@@ -1312,54 +1313,51 @@ body {
   color: #ffffff;
   cursor: pointer;
 }
-.select-sizes2:not(.open) .select-sizes2__head .select-sizes2__item:not(.active) {
+.select-sizes:not(.open) .select-sizes__head .select-sizes__item:not(.active) {
   display: none;
 }
 
-.select-sizes2__label {
+.select-sizes__label {
   position: absolute;
   left: 30px;
   top: 20px;
 }
 
-/* DROPDOWN */
-/* INNER WRAPPER — ВАЖНО */
-.select-sizes2__list {
+.select-sizes__list {
   margin: 0;
   margin-left: 80px;
   list-style: none;
+  width: 56%;
   text-align: center;
   transition: transform 0.3s ease;
 }
-.select-sizes2:not(.open) .select-sizes2__list {
+.select-sizes:not(.open) .select-sizes__list {
   transform: translateY(0) !important;
   transition: none !important;
 }
 @media (max-width: 768px) {
-  .select-sizes2__list {
+  .select-sizes__list {
     touch-action: pan-y;
     transition: none;
   }
 }
 
-/* ITEM */
-.select-sizes2__item {
+.select-sizes__item {
   font-size: 16px;
   padding: 10px 0;
   opacity: 0.25;
   cursor: pointer;
   transition: 0.2s;
 }
-.select-sizes2__item.active {
+.select-sizes__item.active {
   opacity: 1;
 }
-.select-sizes2:not(.open) .select-sizes2__item {
+.select-sizes:not(.open) .select-sizes__item {
   padding: 0;
   color: #595959;
 }
 
-/* ARROWS */
-.select-sizes2__arrow {
+.select-sizes__arrow {
   position: absolute;
   right: 24px;
   background: none;
@@ -1368,30 +1366,30 @@ body {
   cursor: pointer;
   opacity: 0.7;
   z-index: 3;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.2rem;
+  line-height: 0.8rem;
 }
-.select-sizes2__arrow:hover {
+.select-sizes__arrow:hover {
   opacity: 1;
 }
-.select-sizes2__arrow--up {
+.select-sizes__arrow--up {
   top: 18px;
 }
-.select-sizes2__arrow--down {
+.select-sizes__arrow--down {
   bottom: 18px;
 }
 
-.select-sizes2__controls {
+.select-sizes__controls {
   position: absolute;
   right: 15px;
-  top: 12px;
+  top: 16px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
-.select-sizes2__controls .select-sizes2__arrow {
+.select-sizes__controls .select-sizes__arrow {
   position: static;
   right: 24px;
   background: none;
@@ -1401,16 +1399,16 @@ body {
   opacity: 0.7;
   z-index: 3;
 }
-.select-sizes2__controls .select-sizes2__arrow:hover {
+.select-sizes__controls .select-sizes__arrow:hover {
   opacity: 1;
 }
-.select-sizes2__controls .select-sizes2__arrow--up {
+.select-sizes__controls .select-sizes__arrow--up {
   top: 18px;
 }
-.select-sizes2__controls .select-sizes2__arrow--down {
+.select-sizes__controls .select-sizes__arrow--down {
   bottom: 18px;
 }
-.select-sizes2.open .select-sizes2__controls {
+.select-sizes.open .select-sizes__controls {
   top: 50%;
   transform: translateY(-50%);
 }
@@ -7077,6 +7075,8 @@ body {
 
 .product__preview {
   position: relative;
+  min-width: 0;
+  max-width: 100%;
 }
 .product__preview-label {
   position: absolute;
@@ -7133,6 +7133,7 @@ body {
 .product__image {
   width: 100%;
   border-radius: 7px;
+  aspect-ratio: 140/100;
 }
 .product__image-thumb {
   max-width: 140px;
@@ -7583,4 +7584,22 @@ body {
   .product__footer {
     margin-top: 90px;
   }
+}
+
+.product__thumbs-slider {
+  margin-top: 17px;
+}
+.product__thumbs-slider .swiper-slide {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  width: auto !important;
+  flex-shrink: 0;
+}
+.product__thumbs-slider .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.product__main-slider .swiper-slide {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

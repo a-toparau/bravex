@@ -30,6 +30,8 @@
 
 .product__preview {
   position: relative;
+  min-width: 0;
+  max-width: 100%;
   &-label {
     position: absolute;
     top: -35px;
@@ -71,6 +73,7 @@
 .product__image {
   width: 100%;
   border-radius: 7px;
+  aspect-ratio: 140/100;
   &-main {
   }
   &-thumb {
@@ -359,5 +362,27 @@
   border-top: none;
   @include media-mobile {
     margin-top: 90px;
+  }
+}
+
+.product__thumbs-slider {
+  margin-top: 17px;
+
+  .swiper-slide {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    width: auto !important; // ключевая строка
+    flex-shrink: 0;
+  }
+
+  .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+}
+
+.product__main-slider {
+  .swiper-slide {
+    width: 100%;
   }
 }
