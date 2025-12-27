@@ -178,29 +178,42 @@ document.addEventListener('click', (e) => {
 
 /* ---------- INIT ---------- */
 
-list.addEventListener('touchstart', (e) => {
-  if (!select.classList.contains('open')) return;
+list.addEventListener(
+  'touchstart',
+  (e) => {
+    if (!select.classList.contains('open')) return;
 
-  isDragging = true;
-  startY = e.touches[0].clientY;
+    isDragging = true;
+    startY = e.touches[0].clientY;
 
-  const matrix = new WebKitCSSMatrix(getComputedStyle(list).transform);
-  startTranslate = matrix.m42;
-});
+    const matrix = new WebKitCSSMatrix(getComputedStyle(list).transform);
+    startTranslate = matrix.m42;
+  },
+  { passive: true },
+);
 
-list.addEventListener('touchmove', (e) => {
-  if (!isDragging) return;
+list.addEventListener(
+  'touchmove',
+  (e) => {
+    if (!isDragging) return;
 
-  const delta = e.touches[0].clientY - startY;
-  list.style.transform = `translateY(${startTranslate + delta}px)`;
-});
+    e.preventDefault(); // ⛔️ ОСТАНАВЛИВАЕТ СКРОЛЛ САЙТА
 
-list.addEventListener('touchend', () => {
-  if (!isDragging) return;
-  isDragging = false;
+    const delta = e.touches[0].clientY - startY;
+    list.style.transform = `translateY(${startTranslate + delta}px)`;
+  },
+  { passive: false },
+);
 
-  snapToItem();
-});
+list.addEventListener(
+  'touchend',
+  () => {
+    if (!isDragging) return;
+    isDragging = false;
+    snapToItem();
+  },
+  { passive: true },
+);
 
 function snapToItem() {
   const matrix = new WebKitCSSMatrix(getComputedStyle(list).transform);
