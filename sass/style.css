@@ -3087,27 +3087,21 @@ body {
   right: 15px;
   width: 45px;
   height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   background: #ffffff;
   border-radius: 50%;
 }
-.new-items__button span {
-  color: #000000;
-  font-size: 2.7rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2.7rem;
+.new-items__button img {
+  width: 14px;
+  height: 14px;
 }
 @media (max-width: 1600px) {
   .new-items__button {
     width: 40px;
     height: 40px;
-  }
-  .new-items__button span {
-    font-size: 2.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 2rem;
   }
 }
 @media (max-width: 1440px) {
@@ -3115,11 +3109,9 @@ body {
     width: 35px;
     height: 35px;
   }
-  .new-items__button span {
-    font-size: 2.1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.8rem;
+  .new-items__button img {
+    width: 13px;
+    height: 13px;
   }
 }
 @media (max-width: 992px) {
