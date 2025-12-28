@@ -19,6 +19,7 @@
 @use 'base/accordion';
 @use 'base/pagination';
 @use 'base/inputNumber';
+@use 'base/breadcrumbs';
 
 // layouts
 @use 'layouts/header';
@@ -43,3 +44,4 @@
 @use 'pages/catalogCover';
 @use 'pages/catalog';
 @use 'pages/product';
+@use 'pages/contacts';

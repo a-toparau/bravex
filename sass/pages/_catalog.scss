@@ -4,6 +4,7 @@
   display: flex;
   gap: 35px;
   padding: 100px 30px;
+  color: $color-white;
   @include media-laptop-xl {
     padding: 85px 26px;
   }
@@ -19,7 +20,6 @@
     padding: 100px 30px;
     gap: 0;
   }
-  color: $color-white;
 }
 
 .catalog__filter {

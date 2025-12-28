@@ -49,107 +49,57 @@
       </div>
     </header>
 
-    <main class="checkout">
-      <div class="checkout__wrapper thanks__wrapper">
-        <div class="thanks">
-          <h1 class="thanks__title">Gracias por su pedido</h1>
-          <p class="thanks__subtitle">
-            Hemos enviado los detalles de su pedido a su
-            <span>dirección de correo electrónico. </span>
+    <main class="contacts">
+      <div class="breadcrumbs contacts__breadcrumbs">
+        <a href="./../index.html" class="breadcrumbs__link">Home</a>
+        <span class="breadcrumbs__separator">/</span>
+        <a href="" class="breadcrumbs__link breadcrumbs__link_active">Contact us</a>
+      </div>
+
+      <div class="contacts__layout">
+        <form action="" class="contacts__form">
+          <p class="contacts__title">
+            <span>¿Tienes alguna</span>
+            <span>&nbsp;pregunta?</span>
           </p>
-          <button class="button thanks__button">Continuar comprando</button>
-        </div>
+          <p class="contacts__subtitle">
+            Deja una solicitud y nos pondremos en contacto contigo lo antes posible
+          </p>
+          <div class="contacts__form-block">
+            <input type="text" class="input contacts__input" placeholder="Teléfono" name="phone" />
 
-        <div class="summary-receipt">
-          <p class="summary-receipt__title">Resumen del pedido</p>
-          <div class="summary-receipt__info">
-            <div class="summary-receipt__row">
-              <p class="summary-receipt__label">Número de pedido</p>
-              <span class="summary-receipt__description">#12345</span>
-            </div>
-            <div class="summary-receipt__row">
-              <p class="summary-receipt__label">Fecha de entrega</p>
-              <span class="summary-receipt__description">14.07.2025</span>
-            </div>
-            <div class="summary-receipt__row">
-              <p class="summary-receipt__label">Detalles de envío</p>
-              <span class="summary-receipt__description">Nombre/Apellido dirección</span>
-            </div>
-          </div>
-          <div class="summary-receipt__cards">
-            <div class="summary-receipt__card">
-              <div class="summary-receipt__card-wrapper">
-                <img
-                  src="./../assets/img/itemsSlider1.webp"
-                  alt=""
-                  class="summary-receipt__card-image" />
-                <div class="summary-receipt__card-info">
-                  <p class="summary-receipt__card-title">
-                    Anillo de dragón con diamante redondo brillante
-                  </p>
-                  <div class="summary-receipt__card-description">
-                    <div>
-                      <p>Tamaño</p>
-                      <p>180x160</p>
-                    </div>
-                    <div>
-                      <p>Cantidad</p>
-                      <p>1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p class="summary-receipt__price">$44,704 USD</p>
-            </div>
-
-            <div class="summary-receipt__card">
-              <div class="summary-receipt__card-wrapper">
-                <img
-                  src="./../assets/img/itemsSlider1.webp"
-                  alt=""
-                  class="summary-receipt__card-image" />
-                <div class="summary-receipt__card-info">
-                  <p class="summary-receipt__card-title">
-                    Anillo de dragón con diamante redondo brillante
-                  </p>
-                  <div class="summary-receipt__card-description">
-                    <div>
-                      <p>Tamaño</p>
-                      <p>180x160</p>
-                    </div>
-                    <div>
-                      <p>Cantidad</p>
-                      <p>1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p class="summary-receipt__price">$44,704 USD</p>
-            </div>
+            <input type="text" class="input contacts__input" placeholder="Nombre" name="name" />
+            <input type="text" class="input contacts__input" placeholder="País" name="country" />
           </div>
 
-          <div class="summary-receipt__info">
-            <div class="summary-receipt__row">
-              <p class="summary-receipt__label">Subtotal</p>
-              <span class="summary-receipt__price">$44,704 USD</span>
-            </div>
-            <div class="summary-receipt__row">
-              <p class="summary-receipt__label">Entrega exprés</p>
-              <span class="summary-receipt__price">$0,00 USD</span>
-            </div>
-            <div class="summary-receipt__row">
-              <p class="summary-receipt__label">Impuesto estimado</p>
-              <span class="summary-receipt__price">$1000,73 USD</span>
-            </div>
-          </div>
+          <button type="submit" class="button contacts__button">Dejar una solicitud</button>
+          <p class="contacts__form-notification">
+            <span>Al hacer clic en el botón, aceptas</span>
+            <span>&nbsp;la Política de Privacidad</span>
+          </p>
+        </form>
 
-          <div class="summary-receipt__row summary-receipt__total">
-            <p class="summary-receipt__label">Total</p>
-            <span class="summary-receipt__price_strong">$45,777 USD</span>
+        <div class="contacts__departments">
+          <div class="contacts__department">
+            <p class="contacts__department-title">soporte:</p>
+            <p class="contacts__department-mail">info@bravex-group.en</p>
+          </div>
+          <div class="contacts__department">
+            <p class="contacts__department-title">colaboración:</p>
+            <p class="contacts__department-mail">partner@bravex-group.en</p>
+          </div>
+          <div class="contacts__department">
+            <p class="contacts__department-title">carrera:</p>
+            <p class="contacts__department-mail">hr@bravex-group.en</p>
           </div>
         </div>
       </div>
     </main>
+
+    <div class="contacts__location">
+      <p>+353 87 605-24-11</p>
+      <p>georgia, tbilisi, saburtalo district, bakhtrioni street, N 22, N75</p>
+    </div>
 
     <footer class="footer">
       <div class="footer__layout">
