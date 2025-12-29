@@ -90,22 +90,9 @@
     margin-bottom: 14px;
   }
   @include media-mobile {
-    justify-content: center;
     @include font($size: 3rem, $height: 3rem, $weight: 400);
     margin-bottom: 12px;
   }
-  // @include media-laptop-lg {
-  //   @include font($size: 3.8rem, $height: 4.8rem, $weight: 400);
-  //   margin-bottom: 18px;
-  // }
-  // @include media-laptop {
-  //   @include font($size: 3.4rem, $height: 4.4rem, $weight: 400);
-  //   margin-bottom: 16px;
-  // }
-  // @include media-mobile {
-  //   @include font($size: 3rem, $height: 3.8rem, $weight: 400);
-  //   margin-bottom: 22px;
-  // }
 }
 
 .contacts__subtitle {
@@ -186,6 +173,7 @@
     font-size: 1.2rem;
   }
   @include media-tablet-lg {
+    margin-top: 15px;
     height: 44px;
     font-size: 1.4rem;
     border-radius: 10px;
@@ -239,6 +227,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  text-decoration: none;
 }
 
 .contacts__department-title {

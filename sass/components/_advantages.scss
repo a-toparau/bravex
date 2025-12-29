@@ -140,7 +140,7 @@
     width: 175px;
     @include font($size: 1.6rem, $height: 2.1rem, $weight: 500);
     & :last-child {
-      @include font($size: 1.1rem, $height: 1.6rem, $weight: 400);
+      @include font($size: 1.2rem, $height: 1.6rem, $weight: 400);
     }
   }
   @include media-mobile {

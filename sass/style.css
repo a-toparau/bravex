@@ -2406,6 +2406,11 @@ body {
   background: rgba(30, 29, 28, 0.7);
   filter: blur(100px);
 }
+@media (max-width: 430px) {
+  .popular-categories__card::after {
+    filter: blur(60px);
+  }
+}
 
 .popular-categories__content {
   gap: 25px;
@@ -2586,7 +2591,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   gap: 36px;
-  padding: 50px;
+  padding: 45px;
 }
 @media (max-width: 768px) {
   .catalog-overview__content {
@@ -2602,7 +2607,7 @@ body {
 
 .catalog-overview__title {
   letter-spacing: -3px;
-  width: 69%;
+  width: 1240px;
   font-size: 8rem;
   font-style: normal;
   font-weight: 400;
@@ -2614,11 +2619,12 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 6.7rem;
+    width: 990px;
   }
 }
 @media (max-width: 1440px) {
   .catalog-overview__title {
-    width: 61%;
+    width: 735px;
     font-size: 5rem;
     font-style: normal;
     font-weight: 400;
@@ -2627,6 +2633,7 @@ body {
 }
 @media (max-width: 1200px) {
   .catalog-overview__title {
+    width: 570px;
     font-size: 4rem;
     font-style: normal;
     font-weight: 400;
@@ -2660,11 +2667,11 @@ body {
 }
 @media (max-width: 430px) {
   .catalog-overview__title {
-    font-size: 4rem;
+    font-size: 3.9rem;
     font-style: normal;
     font-weight: 400;
     line-height: 4.1rem;
-    width: 100%;
+    width: 350px;
   }
 }
 @media (max-width: 360px) {
@@ -2678,10 +2685,10 @@ body {
 }
 
 .catalog-overview__subtitle {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 3.2rem;
+  line-height: 3.1rem;
   padding-top: 15px;
   text-align: right;
   letter-spacing: -0.03em;
@@ -2689,20 +2696,20 @@ body {
 }
 @media (max-width: 1600px) {
   .catalog-overview__subtitle {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 2.4rem;
+    line-height: 2.3rem;
     padding-top: 12px;
   }
 }
 @media (max-width: 1440px) {
   .catalog-overview__subtitle {
     padding-top: 10px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 2.2rem;
+    line-height: 2rem;
   }
 }
 @media (max-width: 992px) {
@@ -2726,8 +2733,8 @@ body {
 .catalog-overview__description {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  min-width: 300px;
+  width: 340px;
+  min-width: 340px;
   margin-right: 35px;
 }
 @media (max-width: 1920px) {
@@ -2737,14 +2744,14 @@ body {
 }
 @media (max-width: 1600px) {
   .catalog-overview__description {
-    width: 265px;
-    min-width: 265px;
+    width: 317px;
+    min-width: 317px;
   }
 }
 @media (max-width: 1440px) {
   .catalog-overview__description {
-    width: 245px;
-    min-width: 245px;
+    width: 282px;
+    min-width: 282px;
   }
 }
 @media (max-width: 992px) {
@@ -2816,7 +2823,17 @@ body {
 }
 @media (max-width: 1600px) {
   .catalog-overview__card {
-    padding: 20px;
+    padding: 18px;
+  }
+}
+@media (max-width: 1440px) {
+  .catalog-overview__card {
+    padding: 16px;
+  }
+}
+@media (max-width: 1200px) {
+  .catalog-overview__card {
+    padding: 15px;
   }
 }
 
@@ -3325,7 +3342,7 @@ body {
     line-height: 2.1rem;
   }
   .advantages__info :last-child {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.6rem;
@@ -5074,7 +5091,7 @@ body {
   }
 }
 
-.catalog-section__card .catalog-section__card-button {
+.catalog-section__card:hover .catalog-section__card-button {
   opacity: 1;
 }
 
@@ -6025,7 +6042,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 2rem;
-    width: 235px;
+    width: 275px;
     margin-bottom: 50px;
   }
 }
@@ -7752,7 +7769,6 @@ body {
 }
 @media (max-width: 430px) {
   .contacts__title {
-    justify-content: center;
     font-size: 3rem;
     font-style: normal;
     font-weight: 400;
@@ -7887,6 +7903,7 @@ body {
 }
 @media (max-width: 992px) {
   .contacts__button {
+    margin-top: 15px;
     height: 44px;
     font-size: 1.4rem;
     border-radius: 10px;
@@ -7972,6 +7989,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  text-decoration: none;
 }
 
 .contacts__department-title {
