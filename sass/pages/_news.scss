@@ -1,7 +1,22 @@
 @use '../abstract/index' as *;
 
 .news {
+  position: relative;
   padding: 150px 45px 95px;
+  &::after {
+    position: absolute;
+    z-index: -1;
+    top: 5%;
+    content: '';
+    bottom: 0;
+    right: 0;
+    width: 20%;
+    height: 60%;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    background: #292929;
+    filter: blur(100px);
+  }
   @include media-laptop-xl {
     padding: 120px 30px 85px;
   }
@@ -13,6 +28,9 @@
   }
   @include media-tablet {
     padding: 50px 18px 70px;
+    &::after {
+      display: none;
+    }
   }
 }
 
@@ -24,16 +42,16 @@
     color: #a0a0a0;
   }
   @include media-laptop-xl {
-    font-size: 8.2rem;
-    line-height: 8.2rem;
+    font-size: 8rem;
+    line-height: 8rem;
   }
   @include media-laptop-lg {
-    font-size: 7rem;
-    line-height: 7rem;
+    font-size: 6.5rem;
+    line-height: 6.5rem;
   }
   @include media-laptop {
-    font-size: 6rem;
-    line-height: 6rem;
+    font-size: 5.5rem;
+    line-height: 5.5rem;
   }
   @include media-tablet {
     display: none;
@@ -78,6 +96,9 @@
   width: 200px;
   .select-trigger {
     border-radius: 12px;
+    @include media-mobile {
+      border-radius: 8px;
+    }
   }
   @include media-laptop-xl {
     height: 50px;
@@ -157,6 +178,7 @@
 
 .news__card {
   position: relative;
+  cursor: pointer;
   p {
     color: $color-white;
     @include font($size: 3.5rem, $height: 3.5rem, $weight: 400);
@@ -175,19 +197,19 @@
   }
   @include media-laptop-xl {
     p {
-      @include font($size: 2.9rem, $height: 2.9rem, $weight: 400);
+      @include font($size: 2.7rem, $height: 2.7rem, $weight: 400);
       margin-top: 35px;
     }
   }
   @include media-laptop-lg {
     p {
-      @include font($size: 2.5rem, $height: 2.5rem, $weight: 400);
+      @include font($size: 2.4rem, $height: 2.4rem, $weight: 400);
       margin-top: 30px;
     }
   }
   @include media-laptop {
     p {
-      @include font($size: 2.2rem, $height: 2.2rem, $weight: 400);
+      @include font($size: 2rem, $height: 2rem, $weight: 400);
       margin-top: 25px;
     }
   }
@@ -258,21 +280,21 @@
       p {
         max-width: 240px;
         margin-top: 20px;
-        @include font($size: 2rem, $height: 2.3rem, $weight: 400);
+        @include font($size: 1.9rem, $height: 2.2rem, $weight: 400);
       }
     }
     @include media-laptop-lg {
       p {
-        max-width: 220px;
+        max-width: 210px;
         margin-top: 15px;
-        @include font($size: 1.8rem, $height: 2.1rem, $weight: 400);
+        @include font($size: 1.7rem, $height: 2rem, $weight: 400);
       }
     }
     @include media-laptop {
       p {
-        max-width: 200px;
+        max-width: 180px;
         margin-top: 15px;
-        @include font($size: 1.6rem, $height: 1.9rem, $weight: 400);
+        @include font($size: 1.5rem, $height: 1.8rem, $weight: 400);
       }
     }
     @include media-tablet-lg {
@@ -337,5 +359,12 @@
     @include media-tablet-lg {
       display: none;
     }
+  }
+}
+
+.news__footer {
+  border: none;
+  @include media-tablet {
+    margin-top: 60px;
   }
 }
