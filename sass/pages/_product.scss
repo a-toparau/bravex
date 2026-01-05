@@ -6,6 +6,34 @@
   gap: 95px;
   padding: 150px 80px 110px 70px;
   color: $color-white;
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: 97%;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    height: 114%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    background: #292929;
+    filter: blur(220px);
+  }
+  &::after {
+    position: absolute;
+    z-index: -1;
+    top: 97%;
+    content: '';
+    bottom: 0;
+    right: 0;
+    width: 20%;
+    height: 114%;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    background: #292929;
+    filter: blur(220px);
+  }
   @include media-laptop-xl {
     gap: 80px;
     padding: 120px 60px 90px 50px;
@@ -19,6 +47,10 @@
     padding: 80px 20px 50px 20px;
   }
   @include media-tablet {
+    &::before,
+    &::after {
+      display: none;
+    }
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 60px 15px 40px 15px;

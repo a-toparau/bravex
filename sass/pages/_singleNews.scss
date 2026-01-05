@@ -2,7 +2,7 @@
 
 .single-news {
   padding: 150px 20px 100px 20px;
-  &::after {
+  &::before {
     position: absolute;
     z-index: -1;
     top: 25%;
@@ -14,7 +14,21 @@
     border-top-right-radius: 100%;
     border-bottom-right-radius: 100%;
     background: #292929;
-    filter: blur(100px);
+    filter: blur(220px);
+  }
+  &::after {
+    position: absolute;
+    z-index: -1;
+    top: 440%;
+    content: '';
+    bottom: 0;
+    right: 0;
+    width: 20%;
+    height: 170%;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    background: #292929;
+    filter: blur(220px);
   }
   @include media-laptop-xl {
     padding: 120px 20px 75px 20px;
@@ -26,6 +40,10 @@
     padding: 70px 20px 50px 20px;
   }
   @include media-tablet {
+    &::before,
+    &::after {
+      display: none;
+    }
     padding: 40px 10px 20px 10px;
   }
 }
