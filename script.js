@@ -193,31 +193,6 @@ const insightsSlider = new Swiper('#insights-slider', {
   },
 });
 
-// burger-menu
-
-// const burgerBtn = document.querySelector('.burger-btn');
-// const menu = document.querySelector('.menu');
-// const closeBtn = document.querySelector('.close-btn');
-// const body = document.body;
-// const menuLinks = document.querySelectorAll('.burger__list-link a');
-
-// burgerBtn.addEventListener('click', () => {
-//     menu.classList.add('active');
-//     body.classList.add('menu-open');
-// });
-
-// closeBtn.addEventListener('click', () => {
-//     menu.classList.remove('active');
-//     body.classList.remove('menu-open');
-// });
-
-// menuLinks.forEach(link => {
-//     link.addEventListener('click', () => {
-//         menu.classList.remove('active');
-//         body.classList.remove('menu-open');
-//     });
-// });
-
 //Fade-in
 
 gsap.utils.toArray('.fade-in').forEach((element) => {
