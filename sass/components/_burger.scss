@@ -10,7 +10,7 @@
   position: fixed;
   background: #000;
   z-index: 10;
-  padding: 15px 15px calc(60px + env(safe-area-inset-bottom)) 20px;
+  padding: 22px 15px calc(60px + env(safe-area-inset-bottom)) 20px;
   overflow: hidden;
   overflow-y: scroll;
   transform: translateX(-100%);
@@ -26,6 +26,9 @@
 }
 
 .burger__cross {
+  position: absolute;
+  right: 20px;
+  top: 20px;
   display: block;
   margin-left: auto;
   filter: brightness(0) invert(1);
