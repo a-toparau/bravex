@@ -5323,12 +5323,12 @@ body {
 }
 
 .burger {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   position: fixed;
   background: #000;
   z-index: 10;
-  padding: 15px 15px 60px 20px;
+  padding: 15px 15px calc(60px + env(safe-area-inset-bottom)) 20px;
   overflow: hidden;
   overflow-y: scroll;
   transform: translateX(-100%);
